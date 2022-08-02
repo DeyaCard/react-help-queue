@@ -3,18 +3,18 @@ import Ticket from "./Ticket";
 
 const mainTicketList = [
   {
-    names: 'Thato and Haley',
-    location: '3A',
+    names: 'Warpaint',
+    location: 'Revolution Hall',
     issue: 'Firebase won\'t save record. Halp.'
   },
   {
-    names: 'Sleater and Kinney',
-    location: '4B',
+    names: 'Sleater-Kinney',
+    location: 'Crystal Ballroom',
     issue: 'Prop types are throwing an error.'
   },
   {
-    names: 'Imani & Jacob',
-    location: '9F',
+    names: 'Tobin Heath and OL Reign',
+    location: 'Providence Park',
     issue: 'Child component isn\'t rendering.'
   }
 ];

@@ -91,6 +91,21 @@ class TicketControl extends React.Component {
       buttonText = "Add Ticket";
     }
 
+    // buttonText = {
+    //   "padding": ".5em 1em",
+    //   "backgroundColor": "black",
+    //   "color": "white",
+    //   "fontSize": "1.5rem",
+    //   "border": "none",
+    //   "borderRadius": ".5em"
+    // }
+
+    // const style = {
+    //   "textAlign": "center",
+    //   "height" : "100vh",
+    //   "display": "flow-root"
+    // }
+
     return (
       <React.Fragment>
         {currentlyVisibleState}

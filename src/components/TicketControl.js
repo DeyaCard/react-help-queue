@@ -4,6 +4,7 @@ import TicketList from './TicketList';
 import TicketDetail from './TicketDetail';
 import EditTicketForm from './EditTicketForm';
 
+
 class TicketControl extends React.Component {
 
   constructor(props) {
@@ -67,6 +68,16 @@ class TicketControl extends React.Component {
       });
   }
 
+  btn = {
+    "backgroundColor": "#dc143c",
+    "color": "white",
+    "fontSize": "20px",
+    "padding": "10px 60px",
+    "borderRadius": "5px",
+    "margin": "10px 0px",
+    "cursor": "pointer"
+  }
+
 
   render(){
     let currentlyVisibleState = null;
@@ -91,25 +102,11 @@ class TicketControl extends React.Component {
       buttonText = "Add Ticket";
     }
 
-    // buttonText = {
-    //   "padding": ".5em 1em",
-    //   "backgroundColor": "black",
-    //   "color": "white",
-    //   "fontSize": "1.5rem",
-    //   "border": "none",
-    //   "borderRadius": ".5em"
-    // }
-
-    // const style = {
-    //   "textAlign": "center",
-    //   "height" : "100vh",
-    //   "display": "flow-root"
-    // }
 
     return (
       <React.Fragment>
         {currentlyVisibleState}
-        <button onClick={this.handleClick}>{buttonText}</button>
+        <button style={this.btn} onClick={this.handleClick}>{buttonText}</button>
       </React.Fragment>
     );
   }

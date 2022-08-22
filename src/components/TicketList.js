@@ -7,9 +7,9 @@ import PropTypes from "prop-types";
 function TicketList(props){
   return (
     <React.Fragment>
-      <hr />
-      {Object.values(props.ticketList).map((ticket) =>
-        <Ticket
+      <hr/>
+      {Object.values(props.ticketList).map((ticket) => {
+        return <Ticket
           whenTicketClicked = { props.onTicketSelection }
           names={ticket.names}
           location={ticket.location}
@@ -17,7 +17,7 @@ function TicketList(props){
           formattedWaitTime={ticket.formattedWaitTime}
           id={ticket.id}
           key={ticket.id}/>
-      )}
+  })}
     </React.Fragment>
   );
 }

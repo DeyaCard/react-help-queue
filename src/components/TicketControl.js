@@ -4,7 +4,7 @@ import TicketList from './TicketList';
 import EditTicketForm from './EditTicketForm';
 import TicketDetail from './TicketDetail';
 import { collection, addDoc, onSnapshot, doc, updateDoc, deleteDoc } from "firebase/firestore";
-import { db } from './../firebase.js'
+import { db, auth } from './../firebase.js';
 
 function TicketControl() {
 
@@ -77,8 +77,15 @@ function TicketControl() {
     setSelectedTicket(selection);
   }
 
-  let currentlyVisibleState = null;
-  let buttonText = null; 
+  if (auth.currentUser == null) {
+    return (
+      <React.Fragment>
+        <h1>You must be signed in to access the queue.</h1>
+      </React.Fragment>
+    )
+  } else if (auth.currentUser != null) {
+    let currentlyVisibleState = null;
+    let buttonText = null;
 
   if (error) {
     currentlyVisibleState = <p>There was an error: {error}</p>
@@ -108,12 +115,13 @@ function TicketControl() {
     buttonText = "Add Ticket"; 
   }
 
-  return (
-    <React.Fragment>
-      {currentlyVisibleState}
-      {error ? null : <button onClick={handleClick}>{buttonText}</button>}
-    </React.Fragment>
-  );
+    return (
+      <React.Fragment>
+       {currentlyVisibleState}
+       {error ? null : <button onClick={handleClick}>{buttonText}</button>}
+      </React.Fragment>
+   );
+  }
 }
 
 export default TicketControl;
